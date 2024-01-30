@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyzing Your Text...</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: rgba(255,78,69,0.2);;
+        }
+        .container  p{
+             padding-left: 30px;
+             font-size: 1.3rem;
+         }
+         
+    </style>
+</head>
+<body>
+    <div class="container" style="width: 100vw; height: 100vh; background-color: #ff4e4500;">
+    <h1 style="text-align: center; padding-top: 20px;">Your Analyzed Text - {{purpose}}</h1>
+    <p >
+        {{analyzed_text}}
+    </p>
+    <p>Length of Characters: {{count_Characters}}</p>
+</div>
+</body>
+</html>
