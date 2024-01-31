@@ -33,12 +33,12 @@ def index(request):
 
 
 def analyze(request):
-    djtext=request.GET.get('text','default')
-    removepunc = request.GET.get('removepunc','off')
-    fullcaps = request.GET.get('fullcaps','off')
-    newineremover = request.GET.get('newineremover','off')
-    extraspaceremover = request.GET.get('extraspaceremover','off')
-    charCount = request.GET.get('charCount','off')
+    djtext=request.POST.get('text','default')
+    removepunc = request.POST.get('removepunc','off')
+    fullcaps = request.POST.get('fullcaps','off')
+    newineremover = request.POST.get('newineremover','off')
+    extraspaceremover = request.POST.get('extraspaceremover','off')
+    charCount = request.POST.get('charCount','off')
     print(removepunc)
     counter = 0
     if removepunc =='on' or extraspaceremover =='on' or charCount =='on' or fullcaps=='on' or newineremover=='on':
@@ -61,7 +61,7 @@ def analyze(request):
         if newineremover == 'on':
             analyzed =""
             for char in djtext:
-                if char == '\n':
+                if char == '\n' or char=='\r':
                     analyzed = analyzed +''
                 else:
                     analyzed = analyzed + char
